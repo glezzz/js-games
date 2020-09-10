@@ -1,17 +1,38 @@
 
-let userChoice = document.getElementById("rock").value
 
-    console.log(userChoice);
+
+
+    let userChosen
+    let computerChosen
+    let userChoice = document.getElementById("user-choice")
+    let result = compare()
+    let displayResult
+    let possibleChoices = document.querySelectorAll(".choices")
+    // get user choice
+    possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener("click", (e) =>{
+        userChosen = e.target.id
+        getComputerChoice()
+        compare()
+        userChoice.innerHTML = userChosen
+        computerChoice.innerHTML = computerChosen
+        displayResult.innerHTML = result
+
+    }))
+
     // computer
     let computerChoice = Math.random();
-    if (computerChoice < 0.34){
-        computerChoice = "rock";
-    }else if (computerChoice <= 0.67){
-        computerChoice = "paper";
+    function getComputerChoice() {
 
-    }else{
-        computerChoice = "scissors";
+        if (computerChoice < 0.34) {
+            computerChoice = "rock";
+        } else if (computerChoice <= 0.67) {
+            computerChoice = "paper";
+
+        } else {
+            computerChoice = "scissors";
+        }
     }
+
 
     function compare(userChoice, computerChoice) {
         if (userChoice === computerChoice) {
@@ -19,27 +40,28 @@ let userChoice = document.getElementById("rock").value
         }
         if (userChoice === "rock") {
             if (computerChoice === "scissors") {
-                return ("You win");
+                return result = "You win"
             } else if (computerChoice === "paper") {
-                return ("You lose");
+                return result = "You lose"
 
             }
         }
         if (userChoice === "paper") {
             if (computerChoice === "scissors") {
-                return ("You lose");
+                return result = "You lose"
             } else if (computerChoice === "rock") {
-                return ("You win");
+                return result = "You win"
             }
         }
         if (userChoice === "scissors") {
             if (computerChoice === "rock") {
-                return ("You lose");
+                return result = "You lose"
             } else if (computerChoice === "paper") {
-                return ("You win");
+                return result = "You win"
             }
 
 
         }
+
     }
 
