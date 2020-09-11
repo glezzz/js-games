@@ -24,41 +24,44 @@ function playGame() {
 
     if (computerChoice < 0.34) {
         computerChoice = "rock";
+        document.getElementById("computer-choice").innerHTML = "Computer picks rock";
 
     } else if (computerChoice <= 0.67) {
         computerChoice = "paper";
+        document.getElementById("computer-choice").innerHTML = "Computer picks paper";
 
     } else {
         computerChoice = "scissors";
+        document.getElementById("computer-choice").innerHTML = "Computer picks scissors";
     }
 
     if (userChoice === computerChoice) {
-        document.getElementById("result").innerHTML = "it's a draw";
+        document.getElementById("result").innerHTML = "It's a draw";
     }
     if (userChoice === "rock") {
         if (computerChoice === "scissors") {
-            document.getElementById("result").innerHTML = "you win";
+            document.getElementById("result").innerHTML = "You pick rock, you win";
 
         } else if (computerChoice === "paper") {
-            document.getElementById("result").innerHTML = "you lose";
+            document.getElementById("result").innerHTML = "You pick rock, you lose";
 
         }
     }
     if (userChoice === "paper") {
         if (computerChoice === "scissors") {
-            document.getElementById("result").innerHTML = "you lose";
+            document.getElementById("result").innerHTML = "You pick paper, you lose";
 
         } else if (computerChoice === "rock") {
-            document.getElementById("result").innerHTML = "you win";
+            document.getElementById("result").innerHTML = "You pick paper, you win";
 
         }
     }
     if (userChoice === "scissors") {
         if (computerChoice === "rock") {
-            document.getElementById("result").innerHTML = "you lose";
+            document.getElementById("result").innerHTML = "You pick scissors, you lose";
 
         } else if (computerChoice === "paper") {
-            document.getElementById("result").innerHTML = "you win";
+            document.getElementById("result").innerHTML = "You pick scissors, you win";
 
         }
 
